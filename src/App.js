@@ -1,24 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ImageSlider from './components/ImageSlider';
+import SliderData from './components/SliderData';
+import { GlobalProvider } from './context/GlobalState';
+import AddTransaction from './Expense Tracker/AddTransaction';
+import Balance from './Expense Tracker/Balance';
+import Header from './Expense Tracker/Header';
+import IncomeExpenses from './Expense Tracker/IncomeExpenses';
+import Transaction from './Expense Tracker/TransactionList';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      {/* <ImageSlider slides={SliderData} /> */}
+
+      <GlobalProvider>
+
+        <Header />
+
+        <Balance />
+
+        <IncomeExpenses />
+
+        <Transaction />
+
+        <AddTransaction />
+
+      </GlobalProvider>
+
+    </>
   );
 }
 
